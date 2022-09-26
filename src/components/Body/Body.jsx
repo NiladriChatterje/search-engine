@@ -61,10 +61,8 @@ const Body = ({data,category}) => {
                                             </h2>
                                             <div id='sub-article'>
                                             {item.sub_articles?.map((item,i)=>{
-                                                return <div id='sub-article-container'
-                                                        onClick={()=>window.open(item.url,'_blank')}>
-                                                            <h5>{item.publisher}</h5>
-                                                        </div>
+                                                return <h5 id='sub-article-container'
+                                                        onClick={()=>window.open(item.url,'_blank')}>{item.publisher}</h5>
                                             })}</div>
                                             {item.summary?<span id='summary'>
                                                 {ReactHtmlParser(item.summary)}

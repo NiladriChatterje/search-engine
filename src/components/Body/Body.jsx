@@ -1,5 +1,6 @@
 import React from 'react';
 import './Body.css';
+import ReactHtmlParser from 'react-html-parser';
 
 const Body = ({data,category}) => {
     if(category === 'search')
@@ -66,7 +67,7 @@ const Body = ({data,category}) => {
                                                         </div>
                                             })}</div>
                                             {item.summary?<span id='summary'>
-                                                {item.summary}
+                                                {ReactHtmlParser(item.summary)}
                                             </span>:null}
 
                                             {item.published?<span

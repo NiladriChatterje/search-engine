@@ -15,7 +15,7 @@ const Navbar = ({setCategory,setQuery}) => {
                 Vite Engine</span>
             <input type='text' id='search'
             onKeyDown={e =>{
-                
+                e.stopPropagation();
                 if(e.code === 'Enter'){
                     setQuery(e.target.value);
                 }

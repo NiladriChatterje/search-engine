@@ -1,0 +1,91 @@
+.Body{
+    width: fit-content;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display:flex;
+    margin-top: 30px;
+    padding-left: 24vw;
+    scroll-behavior: smooth;
+}
+#sub-article-container{
+    width: 120px;
+    margin: 10px 5px;
+    border: 1px solid black;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+#sub-article-container:hover{
+    color:black;
+    background-color: white;
+}
+#sub-article{
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#body-sec{
+    position: relative;
+    width:400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius:10px ;
+    box-shadow: 1px 2px 8px -4px black;
+    padding: 5px 8px;
+    height:max-content;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+h2:hover{
+    cursor: pointer;
+}
+#body-sec > h1{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#body-sec > h1:hover{
+    transform: scale(1.02,1.02);
+}
+#body-sec:hover{
+    color:white;
+    background-color: rgb(59, 78, 129);
+}
+#summary{
+    margin-bottom: 30px;
+}
+#publish{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    color: white;
+    font-weight: 400;
+    width:max-content;
+    background-color: rgb(34, 34, 111);
+}
+#body-sec > span{
+    word-wrap: break-word;
+}
+#body-sec > img{
+    cursor: pointer;
+    object-fit: contain;
+    width: fit-content;
+    height: max-content;
+    border-radius: 15px;
+}
+#body-sec > img:hover{
+    transform: scale(1.02,1.02);
+}
+@media all and (max-width:1000px) {
+    .Body{
+        align-items: center;
+        justify-content: center;
+       padding:  0 6%}
+    #body-sec > h1 {
+        text-align: center;
+    }
+}

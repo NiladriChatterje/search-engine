@@ -1,0 +1,18 @@
+body{
+  color:black;
+  background-image: linear-gradient(to bottom right,#ffffff,rgb(205, 205, 205));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-tap-highlight-color: transparent;
+}
+*::-webkit-scrollbar{
+  width:10px;
+}
+*::-webkit-scrollbar-track{
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: rgb(54, 96, 147);
+  border-radius: 20px ;
+}

@@ -1,0 +1,15 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer{
+  font-family:Stencil Std, fantasy;
+  position: fixed;
+  bottom:50px;
+  right: 10px;
+}
+footer > img{
+  width:40px;
+  height:40px;
+}

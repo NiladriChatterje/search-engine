@@ -41,7 +41,8 @@
     position: relative;
     margin-top: 8%;
     top:100%;
-    left:45%;
+    left:50%;
+    transform: translateX(-50%);
     width: 500px;
     height: 500px;
     display: inline-block;

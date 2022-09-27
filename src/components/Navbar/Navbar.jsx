@@ -1,10 +1,10 @@
 import './Navbar.css';
 import React from 'react';
 
-const section_tags=['search','image','news','Video']
+const section_tags=['search','image','news','video']
 
-const Navbar = ({setCategory,setQuery}) => {
- 
+const Navbar = ({setCategory,setQuery,setIsLoading}) => {
+    const inputRef = React.useRef();
 
     return <>
         <nav>
@@ -14,21 +14,27 @@ const Navbar = ({setCategory,setQuery}) => {
             alt='' />
                 Vite Engine</span>
             <input type='text' id='search'
+            ref={inputRef}
             onKeyDown={e =>{
                 e.stopPropagation();
                 if(e.code === 'Enter'){
-                    setQuery(e.target.value);
+                    {setQuery(e.target.value);
+                        setIsLoading(true)}
                 }
             }} />
             <img
             onClick={()=>{
-                setQuery(e.target.value);
+                console.log(inputRef.current.value)
+                setQuery(inputRef.current.value);
+                setIsLoading(true)
             }}
             src={'https://imgs.search.brave.com/XnTEeU2ohkqPPW3NiGDWLvYXRUGHanZIGof5h4wuTWU/rs:fit:1024:1024:1/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvYmFzaWMtdWkt/ZWxlbWVudHMtY29s/b3IvNzAwLzA5X3Nl/YXJjaC0xMDI0LnBu/Zw'} alt="" />
             
             <section id='nav-sec'>
                 {section_tags?.map((item,i)=><span key={i}
-                                                onClick={()=>setCategory(item)}>
+                                                onClick={()=>{setIsLoading(true);
+                                                                setCategory(item);
+                                                            }}>
                                                     {item}
                                              </span>)}
             </section>

@@ -18,9 +18,11 @@ const options = {
 function App() {
   const [category,setCategory] = useState(()=>'search');
   const [data,setData] = useState(()=>[]);
-  const [query,setQuery] = useState(()=>'elon+musk')
+  const [query,setQuery] = useState(()=>'elon+musk');
+  const [isLoading,setIsLoading] = useState(()=>true);
 
   React.useMemo(async ()=>{
+    setIsLoading(true);
     const data = await await fetch(URL+`${category}/q=${query}`,options)
                               .then(res => res.json())
                               .then(data => data)
@@ -28,16 +30,19 @@ function App() {
 
     console.log(data);
     setData(data);
+    setIsLoading(false);
   },[category,query]);
 
   return (
     <div className="App">
      <Navbar 
+          setIsLoading={setIsLoading}
           setCategory={setCategory}
           setQuery={setQuery}/>
 
      <Body category={category} 
-            data={data} />
+            data={data}
+            isLoading={isLoading} />
 
      <footer>
       Powered By  <img src={powered_logo} />

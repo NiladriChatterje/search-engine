@@ -24,7 +24,6 @@ const Navbar = ({setCategory,setQuery,setIsLoading}) => {
             }} />
             <img
             onClick={()=>{
-                console.log(inputRef.current.value)
                 setQuery(inputRef.current.value);
                 setIsLoading(true)
             }}

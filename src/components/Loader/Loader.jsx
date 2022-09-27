@@ -3,13 +3,13 @@ import './Loader.css';
 
 export const Loader = () => {
   return (
-    <div className='loader-container'>
+   
         <div className="loadingio-spinner-ripple-zpkltf5vrmg">
             <div className="ldio-79oppx917q">
                  <div></div>
                  <div></div>
             </div>
         </div>
-    </div>
+    
   )
 }
